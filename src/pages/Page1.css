@@ -1,0 +1,612 @@
+/* ========== PÁGINA 1: COLORES FURSONA ZORRO ========== */
+/* Paleta: #6b3f00, #7b6b5a, #c33100, #c99613, #000403 */
+
+.page1-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2d1700 0%, #4a2800 50%, #6b3f00 100%);
+  position: relative;
+  overflow-x: hidden;
+  padding-bottom: 180px;
+  padding-top: 100px;
+}
+
+/* ========== BACKGROUND ANIMADO ========== */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+  animation: float 20s ease-in-out infinite;
+}
+
+.orb1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #c33100, transparent);
+  top: -150px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+.orb2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #c99613, transparent);
+  bottom: -200px;
+  right: -200px;
+  animation-delay: 5s;
+}
+
+.orb3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #000403, transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(40px, -40px) scale(1.1);
+  }
+  50% {
+    transform: translate(-30px, 30px) scale(0.95);
+  }
+  75% {
+    transform: translate(30px, 40px) scale(1.05);
+  }
+}
+
+/* ========== HEADER PRINCIPAL ========== */
+.page1-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 60px 20px 60px;
+}
+
+.main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: #c99613;
+  text-shadow: 
+    0 0 20px rgba(201, 150, 19, 0.6),
+    0 0 40px rgba(201, 150, 19, 0.4),
+    0 0 60px rgba(201, 150, 19, 0.2),
+    0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 25px;
+  letter-spacing: 4px;
+  animation: titleGlow 3s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(201, 150, 19, 0.6),
+      0 0 40px rgba(201, 150, 19, 0.4),
+      0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(201, 150, 19, 0.9),
+      0 0 60px rgba(201, 150, 19, 0.6),
+      0 0 90px rgba(201, 150, 19, 0.3),
+      0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.subtitle-line {
+  width: 180px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #c99613, transparent);
+  margin: 0 auto 25px;
+  box-shadow: 0 0 15px rgba(201, 150, 19, 0.6);
+  animation: lineGrow 2.5s ease-in-out infinite;
+}
+
+@keyframes lineGrow {
+  0%, 100% { 
+    width: 180px;
+    opacity: 0.9;
+  }
+  50% { 
+    width: 240px;
+    opacity: 1;
+  }
+}
+
+.main-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: #ffd700;
+  font-weight: 300;
+  letter-spacing: 3px;
+  opacity: 0.95;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== CONTENT WRAPPER ========== */
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========== TARJETAS BASE ========== */
+.card-container {
+  background: rgba(107, 63, 0, 0.45);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 2px solid rgba(201, 150, 19, 0.35);
+  border-radius: 28px;
+  padding: 45px;
+  margin-bottom: 50px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 150, 19, 0.15), transparent);
+  transition: left 0.6s;
+}
+
+.card-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 15px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(201, 150, 19, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: rgba(201, 150, 19, 0.7);
+}
+
+.card-container:hover::before {
+  left: 100%;
+}
+
+.card-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: #c99613;
+  margin-bottom: 12px;
+  text-shadow: 
+    0 0 15px rgba(201, 150, 19, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.card-subtitle {
+  color: rgba(255, 215, 0, 0.75);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+/* ========== CONTENIDO CENSURADO ========== */
+.censored-content {
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.blur-lines {
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.blur-line {
+  height: 22px;
+  background: linear-gradient(90deg, 
+    rgba(201, 150, 19, 0.35) 0%, 
+    rgba(201, 150, 19, 0.6) 50%, 
+    rgba(201, 150, 19, 0.35) 100%);
+  margin: 12px 0;
+  border-radius: 11px;
+  filter: blur(10px);
+  animation: shimmer 2.5s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(201, 150, 19, 0.3);
+}
+
+.blur-line:nth-child(odd) {
+  width: 92%;
+}
+
+.blur-line:nth-child(even) {
+  width: 75%;
+  margin-left: auto;
+}
+
+.blur-line:nth-child(3n) {
+  width: 85%;
+  margin-left: 8%;
+}
+
+.blur-line:nth-child(4n) {
+  width: 80%;
+  margin-left: 5%;
+}
+
+@keyframes shimmer {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: translateX(0);
+  }
+  50% { 
+    opacity: 1;
+    transform: translateX(3px);
+  }
+}
+
+/* ========== BOTÓN REVELAR ========== */
+.reveal-btn {
+  position: relative;
+  z-index: 2;
+  padding: 22px 60px;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: #2d1700;
+  background: linear-gradient(135deg, #c99613, #ffd700, #c99613);
+  background-size: 200% 100%;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 
+    0 10px 30px rgba(201, 150, 19, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.reveal-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  transition: width 0.7s, height 0.7s;
+}
+
+.reveal-btn:hover {
+  transform: translateY(-4px);
+  background-position: 100% 0;
+}
+
+.reveal-btn:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.reveal-btn:active {
+  transform: translateY(-2px);
+}
+
+/* ========== CONTENIDO REVELADO ========== */
+.revealed-content {
+  color: #ffd700;
+  line-height: 1.9;
+font-size: clamp(2.5rem, 5vw, 4rem);
+  animation: fadeInContent 0.6s ease-in;
+  padding: 10px;
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.revealed-content p {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== EFECTO DE ESCRITURA ========== */
+.typing-text::after {
+  content: '|';
+  animation: blink 0.8s infinite;
+  margin-left: 3px;
+  color: #c99613;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.poem-content {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 1.9vw, 1.2rem);
+  line-height: 2.1;
+  text-align: left;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+/* ========== TARJETAS DE MÚSICA ========== */
+.music-card, .soundcloud-card {
+  background: rgba(195, 49, 0, 0.35);
+  border-color: rgba(195, 49, 0, 0.45);
+}
+
+.music-card:hover, .soundcloud-card:hover {
+  border-color: rgba(195, 49, 0, 0.8);
+  box-shadow: 
+    0 15px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(195, 49, 0, 0.4);
+}
+
+.music-embed, .soundcloud-embed {
+  margin-top: 25px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(195, 49, 0, 0.3);
+}
+
+.music-embed iframe,
+.soundcloud-embed iframe {
+  display: block;
+}
+
+.tidal-link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.open-tidal-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #c33100, #e26812);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(195, 49, 0, 0.4);
+}
+
+.open-tidal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(195, 49, 0, 0.6);
+  background: linear-gradient(135deg, #e26812, #c33100);
+}
+
+/* ========== BOTÓN DE NAVEGACIÓN ========== */
+.nav-button {
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  padding: 22px 50px;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  color: #2d1700;
+  background: linear-gradient(135deg, #c99613, #ffd700);
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 
+    0 10px 30px rgba(201, 150, 19, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  letter-spacing: 2px;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+}
+
+.nav-button:hover {
+  box-shadow: 
+    0 15px 40px rgba(201, 150, 19, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateX(8px);
+}
+
+.nav-button:active {
+  transform: translateX(5px) translateY(2px);
+}
+
+/* ========== RESPONSIVE - TABLET ========== */
+@media (max-width: 768px) {
+  .page1-container {
+    padding-bottom: 120px;
+    padding-top: 80px;
+  }
+  
+  .page1-header {
+    padding: 50px 20px 40px;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .card-container {
+    padding: 35px 25px;
+    margin-bottom: 40px;
+  }
+  
+  .card-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .reveal-btn {
+    padding: 18px 45px;
+    font-size: 1.1rem;
+  }
+  
+  .nav-button {
+    bottom: 80px;
+    right: 30px;
+    padding: 18px 40px;
+    font-size: 1rem;
+  }
+}
+
+/* ========== RESPONSIVE - MOBILE ========== */
+@media (max-width: 480px) {
+  .page1-container {
+    padding-bottom: 110px;
+    padding-top: 70px;
+  }
+  
+  .page1-header {
+    padding: 40px 15px 30px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  
+  .main-subtitle {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+  
+  .content-wrapper {
+    padding: 0 15px;
+  }
+  
+  .card-container {
+    padding: 30px 20px;
+    margin-bottom: 35px;
+    border-radius: 24px;
+  }
+  
+  .card-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .censored-content {
+    min-height: 300px;
+  }
+  
+  .blur-lines {
+    padding: 20px;
+  }
+  
+  .blur-line {
+    height: 18px;
+    margin: 10px 0;
+  }
+  
+  .reveal-btn {
+    padding: 16px 40px;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .revealed-content {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  .poem-content {
+    font-size: 1.05rem;
+    line-height: 2;
+  }
+  
+  .nav-button {
+    bottom: 70px;
+    right: 20px;
+    left: 20px;
+    padding: 16px 35px;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    width: calc(100% - 40px);
+    text-align: center;
+  }
+  
+  .nav-button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .orb1, .orb2, .orb3 {
+    filter: blur(70px);
+    opacity: 0.4;
+  }
+}
+
+/* ========== OPTIMIZACIONES DE RENDIMIENTO ========== */
+.card-container,
+.reveal-btn,
+.nav-button {
+  will-change: transform;
+}
+
+.animated-bg * {
+  will-change: transform, opacity;
+}
+
+/* Evitar lag en animaciones móviles */
+@media (max-width: 768px) {
+  .gradient-orb {
+    animation-duration: 30s;
+  }
+}

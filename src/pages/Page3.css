@@ -1,0 +1,700 @@
+/* ========== PÁGINA 3: COLORES FURSONA 1 ========== */
+/* Paleta: #1309c0, #00fcfc, #27ae4a, #e26812, #000403 */
+
+.page3-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #050340 0%, #0a0580 50%, #1309c0 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 100px;
+}
+
+/* ========== BACKGROUND ANIMADO ========== */
+.animated-bg-3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradient-orb-3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.6;
+  animation: float 22s ease-in-out infinite;
+}
+
+.orb-blue-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #00fcfc, transparent);
+  top: -250px;
+  left: -250px;
+  animation-delay: 0s;
+}
+
+.orb-blue-2 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #27ae4a, transparent);
+  bottom: -220px;
+  right: -220px;
+  animation-delay: 6s;
+}
+
+.orb-blue-3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #e26812, transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 12s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(60px, -60px) scale(1.1);
+  }
+  50% {
+    transform: translate(-50px, 50px) scale(0.95);
+  }
+  75% {
+    transform: translate(50px, 60px) scale(1.05);
+  }
+}
+
+/* ========== HEADER ========== */
+.page3-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title-page3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: #00fcfc;
+  text-shadow: 
+    0 0 30px rgba(0, 252, 252, 0.9),
+    0 0 60px rgba(0, 252, 252, 0.6),
+    0 0 90px rgba(0, 252, 252, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.6);
+  margin-bottom: 25px;
+  letter-spacing: 4px;
+  animation: titleGlowBlue 3s ease-in-out infinite;
+}
+
+@keyframes titleGlowBlue {
+  0%, 100% {
+    text-shadow: 
+      0 0 30px rgba(0, 252, 252, 0.9),
+      0 0 60px rgba(0, 252, 252, 0.6),
+      0 4px 15px rgba(0, 0, 0, 0.6);
+  }
+  50% {
+    text-shadow: 
+      0 0 45px rgba(0, 252, 252, 1),
+      0 0 90px rgba(0, 252, 252, 0.8),
+      0 0 135px rgba(0, 252, 252, 0.5),
+      0 4px 15px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.subtitle-line-3 {
+  width: 180px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #00fcfc, transparent);
+  margin: 0 auto 25px;
+  box-shadow: 0 0 25px rgba(0, 252, 252, 1);
+  animation: lineGlowBlue 2.5s ease-in-out infinite;
+}
+
+@keyframes lineGlowBlue {
+  0%, 100% { 
+    width: 180px;
+    box-shadow: 0 0 25px rgba(0, 252, 252, 1);
+  }
+  50% { 
+    width: 240px;
+    box-shadow: 0 0 40px rgba(0, 252, 252, 1);
+  }
+}
+
+.subtitle-page3 {
+  color: #27ae4a;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== CONFETTI ========== */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+/* ========== CONTENEDOR DEL CUPÓN ========== */
+.coupon-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 650px;
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* ========== SOBRE CERRADO ========== */
+.envelope-container {
+  perspective: 1200px;
+}
+
+.envelope {
+  width: 380px;
+  height: 240px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.envelope-body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #27ae4a, #00fcfc, #27ae4a);
+  background-size: 200% 200%;
+  animation: gradientMove 4s ease infinite;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 50px rgba(0, 252, 252, 0.5),
+    inset 0 -3px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes gradientMove {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.shine-effect {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.4), 
+    transparent);
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+.envelope-seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  filter: drop-shadow(0 0 15px rgba(255, 107, 157, 0.8));
+  z-index: 3;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.flap-fold {
+  width: 0;
+  height: 0;
+  border-left: 190px solid transparent;
+  border-right: 190px solid transparent;
+  border-top: 120px solid #e26812;
+  box-shadow: 
+    0 -3px 20px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(226, 104, 18, 0.6);
+}
+
+.click-hint {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #00fcfc;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(0, 252, 252, 0.9);
+  letter-spacing: 1.5px;
+}
+
+.hint-icon {
+  font-size: 2.5rem;
+  display: block;
+}
+
+.hint-text {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ========== CUPÓN REVELADO ========== */
+.coupon-revealed {
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+}
+
+.coupon-card {
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
+  border-radius: 28px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(0, 252, 252, 0.5);
+  transform-style: preserve-3d;
+}
+
+.coupon-border {
+  padding: 8px;
+  background: linear-gradient(135deg, #00fcfc, #1309c0, #27ae4a, #e26812);
+  background-size: 400% 400%;
+  animation: gradientRotate 5s ease infinite;
+  border-radius: 28px;
+}
+
+@keyframes gradientRotate {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.coupon-content {
+  background: white;
+  border-radius: 22px;
+  padding: 55px 45px;
+  position: relative;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.coupon-badge {
+  margin: 0 auto 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.coupon-badge svg {
+  filter: drop-shadow(0 8px 20px rgba(0, 252, 252, 0.4));
+  animation: badgeRotate 20s linear infinite;
+}
+
+@keyframes badgeRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.coupon-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: #1309c0;
+  margin-bottom: 35px;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 10px rgba(19, 9, 192, 0.2);
+}
+
+.discount-badge {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 35px 0;
+}
+
+.discount-number {
+  font-size: clamp(6rem, 12vw, 9rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #00fcfc, #1309c0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  letter-spacing: -5px;
+  filter: drop-shadow(0 8px 25px rgba(0, 252, 252, 0.4));
+}
+
+.discount-symbol {
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 900;
+  color: #27ae4a;
+  margin-left: 15px;
+  filter: drop-shadow(0 4px 15px rgba(39, 174, 74, 0.4));
+}
+
+.discount-text {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #27ae4a;
+  letter-spacing: 4px;
+  margin-bottom: 35px;
+  text-shadow: 0 2px 8px rgba(39, 174, 74, 0.3);
+}
+
+.coupon-description {
+  margin: 35px 0;
+}
+
+.desc-main {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: #1309c0;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.desc-sub {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: #e26812;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.coupon-divider {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00fcfc, transparent);
+  margin: 35px 0;
+  box-shadow: 0 0 10px rgba(0, 252, 252, 0.5);
+}
+
+.coupon-footer {
+  margin-top: 35px;
+}
+
+.validity {
+  color: #27ae4a;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.from {
+  color: #666;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* ========== ESQUINAS DECORATIVAS ========== */
+.corner {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #00fcfc;
+  z-index: 2;
+}
+
+.corner-tl {
+  top: 15px;
+  left: 15px;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 10px 0 0 0;
+}
+
+.corner-tr {
+  top: 15px;
+  right: 15px;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 10px 0 0;
+}
+
+.corner-bl {
+  bottom: 15px;
+  left: 15px;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 10px;
+}
+
+.corner-br {
+  bottom: 15px;
+  right: 15px;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 10px 0;
+}
+
+/* ========== MENSAJE FINAL ========== */
+.final-message {
+  color: #00fcfc;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  line-height: 1.8;
+  text-align: center;
+  margin-top: 50px;
+  text-shadow: 
+    0 0 20px rgba(0, 252, 252, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.5px;
+}
+
+/* ========== BOTÓN DE NAVEGACIÓN ========== */
+.nav-button-3 {
+  position: fixed;
+  bottom: 70px;
+  left: 50px;
+  padding: 22px 50px;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  color: #050340;
+  background: linear-gradient(135deg, #00fcfc, #27ae4a);
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  box-shadow: 
+    0 10px 30px rgba(0, 252, 252, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.4s ease;
+  z-index: 100;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-button-3:hover {
+  box-shadow: 
+    0 15px 40px rgba(0, 252, 252, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateX(-8px);
+}
+
+.nav-button-3:active {
+  transform: translateX(-5px) translateY(2px);
+}
+
+/* ========== RESPONSIVE - TABLET ========== */
+@media (max-width: 768px) {
+  .page3-container {
+    padding: 70px 20px 90px;
+  }
+  
+  .title-page3 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .envelope {
+    width: 320px;
+    height: 200px;
+  }
+  
+  .flap-fold {
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 100px solid #e26812;
+  }
+  
+  .envelope-seal {
+    font-size: 3rem;
+  }
+  
+  .coupon-content {
+    padding: 45px 35px;
+  }
+  
+  .coupon-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  
+  .discount-number {
+    font-size: 6rem;
+  }
+  
+  .discount-symbol {
+    font-size: 4rem;
+  }
+  
+  .nav-button-3 {
+    bottom: 80px;
+    left: 30px;
+    padding: 18px 40px;
+    font-size: 1rem;
+  }
+}
+
+/* ========== RESPONSIVE - MOBILE ========== */
+@media (max-width: 480px) {
+  .page3-container {
+    padding: 60px 15px 80px;
+  }
+  
+  .page3-header {
+    margin-bottom: 50px;
+  }
+  
+  .title-page3 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  
+  .subtitle-page3 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+  
+  .envelope {
+    width: 290px;
+    height: 185px;
+  }
+  
+  .flap-fold {
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-top: 92px solid #e26812;
+  }
+  
+  .envelope-seal {
+    font-size: 2.5rem;
+  }
+  
+  .click-hint {
+    bottom: -70px;
+  }
+  
+  .hint-icon {
+    font-size: 2rem;
+  }
+  
+  .hint-text {
+    font-size: 1rem;
+  }
+  
+  .coupon-revealed {
+    max-width: 100%;
+  }
+  
+  .coupon-content {
+    padding: 40px 25px;
+  }
+  
+  .coupon-title {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+  
+  .discount-number {
+    font-size: 5rem;
+    letter-spacing: -3px;
+  }
+  
+  .discount-symbol {
+    font-size: 3.5rem;
+    margin-left: 10px;
+  }
+  
+  .discount-text {
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+  }
+  
+  .desc-main {
+    font-size: 1.1rem;
+  }
+  
+  .desc-sub {
+    font-size: 1rem;
+  }
+  
+  .corner {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .final-message {
+    font-size: 1.1rem;
+    margin-top: 40px;
+  }
+  
+  .nav-button-3 {
+    bottom: 80px;
+    left: 20px;
+    padding: 16px 35px;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .orb-blue-1, .orb-blue-2, .orb-blue-3 {
+    filter: blur(90px);
+    opacity: 0.5;
+  }
+}
+
+/* ========== OPTIMIZACIONES ========== */
+.envelope,
+.coupon-card,
+.nav-button-3 {
+  will-change: transform;
+}
+
+.animated-bg-3 * {
+  will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+  .gradient-orb-3 {
+    animation-duration: 30s;
+  }
+  
+  .confetti-piece {
+    width: 10px;
+    height: 10px;
+  }
+}
